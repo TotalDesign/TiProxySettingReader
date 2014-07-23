@@ -5,9 +5,9 @@
 version: 0.1.0
 apiversion: 2
 description: Read proxy settings from iOS.
-author: R. van 't Westende
-license: GNU General Public License, version 2
-copyright: Total Active Media
+author: Total Active Media
+license: GNU General Public License, version 3
+copyright: Copyright (c) 2014
 
 
 # these should not be edited
