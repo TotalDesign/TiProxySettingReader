@@ -8,6 +8,7 @@
 #import "TiBase.h"
 #import "TiHost.h"
 #import "TiUtils.h"
+#import <CFNetwork/CFProxySupport.h>
 
 @implementation NlTotalactivemediaTiProxysettingreaderModule
 
@@ -86,21 +87,25 @@
 
 #pragma Public APIs
 
--(id)example:(id)args
+-(id)httpEnabled
 {
-	// example method
-	return @"hello world";
+    NSDictionary *proxySettings = NSMakeCollectable([(NSDictionary *)CFNetworkCopySystemProxySettings() autorelease]);
+    
+    return [proxySettings objectForKey:(NSString *)kCFNetworkProxiesHTTPEnable];
 }
 
--(id)exampleProp
+-(id)httpHost
 {
-	// example property getter
-	return @"hello world";
+    NSDictionary *proxySettings = NSMakeCollectable([(NSDictionary *)CFNetworkCopySystemProxySettings() autorelease]);
+    
+    return [proxySettings objectForKey:(NSString *)kCFNetworkProxiesHTTPProxy];
 }
 
--(void)setExampleProp:(id)value
+-(id)httpPort
 {
-	// example property setter
+    NSDictionary *proxySettings = NSMakeCollectable([(NSDictionary *)CFNetworkCopySystemProxySettings() autorelease]);
+    
+    return [proxySettings objectForKey:(NSString *)kCFNetworkProxiesHTTPPort];
 }
 
 @end
