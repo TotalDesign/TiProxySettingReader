@@ -15,4 +15,4 @@ name: ios
 moduleid: nl.totalactivemedia.ti.proxysettingreader
 guid: 6176ef10-be18-4c9e-b6a5-671bfdc41c41
 platform: iphone
-minsdk: 3.3.0.GA
+minsdk: 3.0.0.GA
